@@ -1,14 +1,20 @@
 @import "variables";
+body {
+  font-family: $main-font;
+}
 .main-section {
   width: 500px;
-  height: 400px;
+  display: grid;
+  grid-template-columns: 1fr;
 
-  .main-section__heading {
+  .main-section__title {
+    font-family: $highlight-font;
+    text-align: center;
     color: $red;
   }
 
-  .main-section__paragraph {
-    color: $grey;
-    background-color: aquamarine;
+  .main-section__modal-div {
+    background-color: $grey;
+    padding: 30px;
   }
 }

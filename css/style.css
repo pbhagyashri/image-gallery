@@ -1,11 +1,19 @@
+@import url("https://fonts.googleapis.com/css?family=Lato|Lobster+Two");
+body {
+  font-family: "Lato", sans-serif;
+}
+
 .main-section {
   width: 500px;
-  height: 400px;
+  display: grid;
+  grid-template-columns: 1fr;
 }
-.main-section .main-section__heading {
+.main-section .main-section__title {
+  font-family: "Lobster Two", cursive;
+  text-align: center;
   color: #e74c3c;
 }
-.main-section .main-section__paragraph {
-  color: #34495e;
-  background-color: aquamarine;
+.main-section .main-section__modal-div {
+  background-color: #34495e;
+  padding: 30px;
 }
