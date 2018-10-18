@@ -1,0 +1,14 @@
+@import "variables";
+.main-section {
+  width: 500px;
+  height: 400px;
+
+  .main-section__heading {
+    color: $red;
+  }
+
+  .main-section__paragraph {
+    color: $grey;
+    background-color: aquamarine;
+  }
+}
