@@ -1,0 +1,11 @@
+.main-section {
+  width: 500px;
+  height: 400px;
+}
+.main-section .main-section__heading {
+  color: #e74c3c;
+}
+.main-section .main-section__paragraph {
+  color: #34495e;
+  background-color: aquamarine;
+}
