@@ -3,17 +3,28 @@ body {
   font-family: "Lato", sans-serif;
 }
 
-.main-section {
-  width: 500px;
+.grid-container {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-gap: 10px 10px;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
 }
-.main-section .main-section__title {
-  font-family: "Lobster Two", cursive;
-  text-align: center;
-  color: #e74c3c;
+.grid-container .grid-container div {
+  width: 140px;
+  height: 140px;
 }
-.main-section .main-section__modal-div {
-  background-color: #34495e;
-  padding: 30px;
+.grid-container .grid-container__thumbnails {
+  width: 140px;
+  height: 140px;
+  position: relative;
+}
+
+.pagination {
+  display: inline-block;
+}
+
+.pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
 }
