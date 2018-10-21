@@ -1,35 +1,121 @@
 @import "variables";
+@import "form-styles";
 body {
   font-family: $main-font;
 }
+.main-container {
+  display: grid;
+  grid-template-columns: 1fr;
 
+  .header {
+    height: 100px;
+    background-color: $dark-grey;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .header_title { 
+    font-family: $highlight-font;
+    font-size: 2.5em;
+    color: antiquewhite;
+  }
+}
 .grid-container {
   display: grid;
-  grid-gap: 10px 10px;
+  grid-gap: 20px 20px;
   grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
-
-  .grid-container div{
-    width: 140px;
-    height: 140px;
-  }
+  background-color: $dark-grey;
+  width: 60%;
+  margin: 5% 19%;
+  padding: 20px;
 
   .grid-container__thumbnails {
-    width: 140px;
-    height: 140px;
-    position: relative;
+    width: 148px;
+    height: 148px;
   }
+
+  .grid-container__small {
+    z-index: 999;
+    position: absolute;
+    top: 10%;
+    left: 20%;
+    width: 60%;
+    margin-bottom: 10%;
+  }
+
+  .grid-container__thumbnails:hover {
+    opacity: 0.5;
+  } 
+
+  @media only screen and (max-width: 700px){
+    .grid-container__thumbnails {
+        width: 100%;
+        height: 100%;
+    }
+
+    .grid-container__small {
+      width: 90%;
+      left: 5%;
+    }
 }
-  
-.pagination {
-  display: inline-block;
 }
 
-.pagination a {
-  color: black;
-  float: left;
-  padding: 8px 16px;
-  text-decoration: none;
+.pagination-container {
+  padding: 0 30%;
+
+  .pagination-container__links {
+    display: inline-block;
+    padding: 15px 0px 15px 15px;
+    border-radius: 30px;
+    background-color: $red;
+    font-size: 1.3em;
+    font-weight: 700;
+  }
+  
+  .pagination-container__button {
+    color: $dark-grey;
+    text-decoration: none;
+    padding: 15px;
+  }
+
+  .pagination-container__button:hover {
+    background-color: antiquewhite;
+  }
+
 }
+
+#modal {
+  display: none;
+  position: fixed;  
+  z-index: 1; 
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100vh; 
+  overflow: auto; 
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0,0.9); 
+}
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
 
 
 

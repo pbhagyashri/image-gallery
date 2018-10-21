@@ -1,6 +1,5 @@
-// require('dotenv').config();
-
-function img_create(src, alt, title) {
+//create a function to generate img tag
+function createImg(src, alt, title) {
   var img = document.createElement('img');
   img.src = src;
   if ( alt != null ) img.alt = alt;
@@ -11,18 +10,28 @@ function img_create(src, alt, title) {
 }
 
 window.addEventListener("load", function() {
-  getPhotosByPage(1)
+  let inputTag = document.getElementsByClassName('seacrh-form__input')[0]
+  let userInput = "vintage"
+  inputTag.addEventListener("change", function() {
+    if(this.value){
+      userInput = this.value
+    }
+
+  })
+
+  getPhotosByPage(1, userInput)
+  pagination()
 })
 
-let paginationBtn = document.getElementsByClassName("pagination__button")
-  
-  for(let i = 0; i < paginationBtn.length; i++) {
+function pagination() {
+  let paginationBtns = document.getElementsByClassName("pagination-container__button")
+
+  for(let i = 0; i < paginationBtns.length; i++) {
     let thumbnailDiv = document.getElementsByClassName("grid-container")[0]
-
-    paginationBtn.item(i).addEventListener('click', function() {
-
-      while (thumbnailDiv.hasChildNodes()) {   
-    
+  
+    paginationBtns.item(i).addEventListener('click', function() {
+  
+      while (thumbnailDiv.hasChildNodes()) {
         thumbnailDiv.removeChild(thumbnailDiv.firstChild);
       }
       let index = parseInt(this.dataset.id)
@@ -30,32 +39,88 @@ let paginationBtn = document.getElementsByClassName("pagination__button")
     })
   }
 
-function getPhotosByPage(pageNumber) {
+}
+
+// wrap api call in a function to make it reusable. this function will take page number as an argument and make fetch call to the api based on the provided page number. 
+function getPhotosByPage(pageNumber, searchQuery) {
+  //let searchQuery = "vintage"
+
   const KEY = 'f1b7bf92f0d79937504418aeaaad3907aa12ce5f5c8b06982e291d68b875d5db'
-  let URL = `https://api.unsplash.com/photos?page=${pageNumber}&client_id=${KEY}`
+  //let URL = `https://api.unsplash.com/photos?page=${pageNumber}&client_id=${KEY}`
+  let URL = `https://api.unsplash.com/search/photos?page=${pageNumber}&query='vintage'&client_id=${KEY}`
 
   //make a fetch call to Unsplash api. Provide pageNumber as a variable to fetch URL
   fetch(`${URL}`)
     .then( res => res.json())
     .then(response => {
-      
+  
+      //query the grid container div and save it in a variable.
       let thumbnailDiv = document.getElementsByClassName("grid-container")[0]
       
-      response.forEach(photo => {
-
-        let thumbnailContainer = document.createElement('div');
+      //iterate over the JSON data returned by api call 
+      response.results.forEach(photo => {
         
+        // create a thumbnail container div for each photo returned by api
+        let thumbnailContainer = document.createElement('div');
+        thumbnailContainer.className = "thumbnail-container"
+        
+        //create img tag for each photo returned by api
         let src = photo.urls.thumb
-        let title = "image thumbnail"
-        let alt = "thumbnail of the image"
-        let imgTag = img_create(src, alt, title)
+        //let src = photo.preview_photos[0].urls.thumb
+        let title = photo.title
+        let alt = photo.description
+        let imgTag = createImg(src, alt, title)
+        //append the image tag to  thumbnail container div
         thumbnailContainer.appendChild(imgTag)
+
+        imgTag.addEventListener('click', function() {
+          window.scroll({
+            top: '10px',
+            behavior: 'smooth'
+          })
+          createModel(photo, this)
+        })
+
+        //append thumbnail container div to main grid-container
         thumbnailDiv.appendChild(thumbnailContainer)
       })
     })
+    .catch(error => {
+      alert(error)
+    })
 }
 
-function createModal () {
+function createModel (photo, thumbnail) {
+  document.getElementById("modal").style.display = 'block'
+  thumbnail.src = photo.urls.regular
+  thumbnail.className = 'grid-container__small'
 
+  // Get the <span> element that closes the modal
+  var span = document.getElementsByClassName("close")[0];
+
+  // When the user clicks on <span> (x), close the modal
+  span.onclick = function() { 
+      modal.style.display = "none";
+      thumbnail.className = 'grid-container__thumbnails'
+  }
 }
+
+// window.addEventListener('load', () => {
+//   let inputTag = document.getElementsByClassName('seacrh-form__input')[0]
+//   inputTag.addEventListener("change", function() {
+//     userInput = this.value
+//   })
+
+// function searchInput() {
+//   let userInput =""
+//   let input = "vintage"
+//   if(userInput) {
+//     input = userInput
+//   }  
+//   return input
+// }
+// })
+
+
+
 console.log("Create image modal")
