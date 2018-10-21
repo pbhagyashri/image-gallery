@@ -25,6 +25,10 @@ let inputTag = document.getElementsByClassName('seacrh-form__input')[0]
 inputTag.addEventListener("change", (e) => {
   removeChildElements()
   let searchInput = e.target.value
+
+  if (searchInput == "") {
+    searchInput = 'vintage'
+  }
   getPhotosByPage(1, searchInput)
 })
 
