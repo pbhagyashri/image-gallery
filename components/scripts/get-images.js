@@ -59,7 +59,11 @@ function getPhotosByPage(pageNumber = 1, searchQuery = 'vintage') {
       let thumbnailDiv = document.getElementsByClassName("grid-container")[0]
 
       if(response.results.length === 0) {
-        thumbnailDiv.innerHTML = "Sorry no images found. Please try different keyword"
+        errorMessage = document.createElement('p')
+        errorMessage.className = "error"
+
+        errorMessage.append("Sorry no images found :( Please try different keyword!")
+        thumbnailDiv.appendChild(errorMessage)
       }
       
       //iterate over the JSON data returned by api call 

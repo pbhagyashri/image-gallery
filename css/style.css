@@ -112,3 +112,9 @@ body {
   text-decoration: none;
   cursor: pointer;
 }
+
+.error {
+  color: #fff;
+  width: 250%;
+  text-align: center;
+}
