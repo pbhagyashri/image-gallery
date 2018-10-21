@@ -21,10 +21,14 @@ function removeChildElements() {
   }
 }
 
+//handle User Input or search query
 let inputTag = document.getElementsByClassName('seacrh-form__input')[0]
-inputTag.addEventListener("change", (e) => {
+let inputBtn = document.getElementById('submit-btn')
+
+inputBtn.addEventListener("click", (e) => {
+  e.preventDefault()  
   removeChildElements()
-  let searchInput = e.target.value
+  let searchInput = inputTag.value
 
   if (searchInput == "") {
     searchInput = 'vintage'
