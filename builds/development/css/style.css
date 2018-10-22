@@ -6,6 +6,25 @@
   padding-top: 20px;
 }
 
+.seacrh-form__input {
+  display: inline;
+  padding: 9.5px 5px;
+  width: 275px;
+  border: 2px solid #303952;
+  border-radius: 10px;
+}
+
+.search-form__btn {
+  background-color: transparent;
+  color: #e74c3c;
+  border: 2px solid #303952;
+  border-radius: 10px;
+  padding: 7px 20px;
+  cursor: pointer;
+  display: inline;
+  font-size: 1.2em;
+}
+
 body {
   font-family: "Lato", sans-serif;
 }
@@ -13,6 +32,8 @@ body {
 .main-container {
   display: grid;
   grid-template-columns: 1fr;
+  align-items: center;
+  justify-content: center;
 }
 .main-container .header {
   height: 100px;
@@ -62,8 +83,15 @@ body {
   }
 }
 
+@media only screen and (max-width: 500px) {
+  .grid-container {
+    margin-left: 15%;
+  }
+}
 .pagination-container {
-  padding: 0 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .pagination-container .pagination-container__links {
   display: inline-block;
@@ -80,6 +108,11 @@ body {
 }
 .pagination-container .pagination-container__button:hover {
   background-color: antiquewhite;
+}
+@media only screen and (max-width: 500px) {
+  .pagination-container .pagination-container__button {
+    padding: 12px;
+  }
 }
 
 #modal {

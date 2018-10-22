@@ -23,7 +23,7 @@ function removeChildElements() {
 
 //handle User Input or search query
 let inputTag = document.getElementsByClassName('seacrh-form__input')[0]
-let inputBtn = document.getElementById('submit-btn')
+let inputBtn = document.getElementsByClassName('search-form__btn')[0]
 
 inputBtn.addEventListener("click", (e) => {
   e.preventDefault()  
@@ -42,6 +42,10 @@ for(let i = 0; i < paginationBtns.length; i++) {
   
   paginationBtns.item(i).addEventListener('click', function() {
     removeChildElements()
+    if (inputTag.value == "") {
+      inputTag.value = 'vintage'
+    }
+
     pageNumber = parseInt(this.dataset.id)
     getPhotosByPage(pageNumber, inputTag.value)
   })
