@@ -13,13 +13,13 @@ An image gallery showcasing beautiful images from Unsplash API. Search field all
 
 ## Instruction for running the project.
 
-## Please clone the github repo from this URL
+#### Please clone the github repo from this URL
 https://github.com/pbhagyashri/forbes-engineering-take-home-test
 
-### To install all dependancies run,
+#### To install all dependancies run,
 ``npm install``
 
-### To run the local server run,
+#### To run the local server run,
 ``npm start``
 
 
