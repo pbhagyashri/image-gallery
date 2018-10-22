@@ -16,5 +16,3 @@ _ run npm install to install all dependancies
 _ run npm start to run the local server. This should fire up a server at http://localhost:8080
 
 
-
-

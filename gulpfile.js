@@ -24,17 +24,17 @@ gulp.task('js', function() {
     .pipe(connect.reload())
 })
 
-gulp.task('compass', function() {
-  gulp.src(sassSources)
-    .pipe(compass({
-      sass: 'components/sass',
-      //image: 'build/development/images',
-      style: 'expanded'
-    }))
-    .on('error', gutil.log)
-    .pipe(gulp.dest('builds/development/css'))
-    .pipe(connect.reload())
-})
+// gulp.task('compass', function() {
+//   gulp.src(sassSources)
+//     .pipe(compass({
+//       sass: 'components/sass',
+//       //image: 'build/development/images',
+//       style: 'expanded'
+//     }))
+//     .on('error', gutil.log)
+//     .pipe(gulp.dest('builds/development/css'))
+//     .pipe(connect.reload())
+// })
 
 gulp.task('html', function() {
   gulp.src(htmlSources)

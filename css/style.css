@@ -27,6 +27,8 @@
 
 body {
   font-family: "Lato", sans-serif;
+  padding: 0;
+  margin: 0;
 }
 
 .main-container {
@@ -150,4 +152,10 @@ body {
   color: #fff;
   width: 250%;
   text-align: center;
+}
+
+.footer {
+  text-align: right;
+  height: 80px;
+  background-color: #303952;
 }

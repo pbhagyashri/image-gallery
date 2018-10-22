@@ -2,7 +2,10 @@
 @import "form-styles";
 body {
   font-family: $main-font;
+  padding: 0;
+  margin: 0;
 }
+
 .main-container {
   display: grid;
   grid-template-columns: 1fr;
@@ -140,6 +143,11 @@ body {
   text-align: center;
 }
 
+.footer {
+  text-align: right;
+  height: 80px;
+  background-color: $dark-grey;
+}
 
 
 
