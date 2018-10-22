@@ -47,7 +47,7 @@ gulp.task('watch', function() {
   gulp.watch(htmlSources, ['html'])
 })
 
-gulp.task('default', ['js', 'compass', 'html', 'watch', 'connect'])
+gulp.task('default', ['js', 'html', 'watch', 'connect', 'log'])
 
 gulp.task('connect', function() {
   connect.server({

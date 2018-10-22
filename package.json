@@ -11,7 +11,7 @@
     "url": "?.git"
   },
   "author": "Bhagyashri Padmawar",
-  "dependencies": {
+  "devDependencies": {
     "dotenv": "^6.1.0",
     "gulp": "^3.9.1",
     "gulp-compass": "^2.1.0",
