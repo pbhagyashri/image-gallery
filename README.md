@@ -1,24 +1,28 @@
+#image gallery
+
 An image gallery showcasing beautiful images from Unsplash API. Search field allows you to load your favourite categories including cats of-course! 
 
-_ Tools and Technologies used -
-_ HTML5,
-_ CSS3,
-_ CSS-Grid for responsiveness.
-_ Sass CSS Preprocessor, 
-_ Gulp build tool,
-_ Vanila JavaScript
+**Tools and Technologies used**
 
-Instruction for running the project.
+- HTML5,
+- CSS3,
+- CSS-Grid for responsiveness.
+- Sass CSS Preprocessor, 
+- Gulp build tool,
+- Vanila JavaScript
 
-<!-- _ Please clone the github repo from this URL - https://github.com/pbhagyashri/forbes-engineering-take-home-test -->
+**Instruction for running the project.**
 
-_ run npm install to install all dependancies
-_ run npm start to run the local server. This should fire up a server at http://localhost:8080
+**Please clone the github repo from this URL**
+https://github.com/pbhagyashri/forbes-engineering-take-home-test
+
+__To install all dependancies run,__
+``run npm install``
+
+__To run the local server run,__
+``run npm start``
 
 
-<<<<<<< HEAD
-=======
 
 
 
->>>>>>> 3f8dfd6c0ade42af9e8f970c220f5ddf9513d28a
