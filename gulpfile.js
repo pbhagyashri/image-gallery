@@ -4,6 +4,7 @@ var gulp = require('gulp'),
     gutil = require('gulp-util'),
     concat = require('gulp-concat'),
     connect = require('gulp-connect');
+    var compass = require('gulp-compass');
 
 var jsSources = [
   'components/scripts/get-images.js',
@@ -25,6 +26,17 @@ gulp.task('js', function() {
 
 gulp.task('html', function() {
   gulp.src(htmlSources)
+    .pipe(connect.reload())
+})
+
+gulp.task('compass', function() {
+  gulp.src(sassSources)
+    .pipe(compass({
+      sass: 'components/sass',
+      style: 'expanded'
+    }))
+    .on('error', gutil.log)
+    .pipe(gulp.dest('builds/development/css'))
     .pipe(connect.reload())
 })
 

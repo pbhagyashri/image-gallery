@@ -3,12 +3,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 20px;
+  padding-top: 7px;
 }
 
 .seacrh-form__input {
   display: inline;
-  padding: 9.5px 5px;
+  padding: 7px 5px;
   width: 275px;
   border: 2px solid #303952;
   border-radius: 10px;
@@ -19,7 +19,7 @@
   color: #e74c3c;
   border: 2px solid #303952;
   border-radius: 10px;
-  padding: 7px 20px;
+  padding: 4.5px 20px;
   cursor: pointer;
   display: inline;
   font-size: 1.2em;
@@ -38,7 +38,7 @@ body {
   justify-content: center;
 }
 .main-container .header {
-  height: 100px;
+  height: 85px;
   background-color: #303952;
   display: flex;
   align-items: center;
@@ -46,22 +46,22 @@ body {
 }
 .main-container .header_title {
   font-family: "Lobster Two", cursive;
-  font-size: 2.5em;
+  font-size: 2.2em;
   color: antiquewhite;
 }
 
 .grid-container {
   display: grid;
-  grid-gap: 20px 20px;
+  grid-gap: 5px 20px;
   grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
   background-color: #303952;
   width: 60%;
-  margin: 5% 19%;
-  padding: 20px;
+  margin: 1.5% 19%;
+  padding: 15px;
 }
 .grid-container .grid-container__thumbnails {
-  width: 148px;
-  height: 148px;
+  width: 145px;
+  height: 145px;
 }
 .grid-container .grid-container__small {
   z-index: 999;
@@ -94,10 +94,11 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 15px;
 }
 .pagination-container .pagination-container__links {
   display: inline-block;
-  padding: 15px 0px 15px 15px;
+  padding: 10px 0px 10px 10px;
   border-radius: 30px;
   background-color: #e74c3c;
   font-size: 1.3em;
@@ -106,7 +107,7 @@ body {
 .pagination-container .pagination-container__button {
   color: #303952;
   text-decoration: none;
-  padding: 15px;
+  padding: 10px;
 }
 .pagination-container .pagination-container__button:hover {
   background-color: antiquewhite;
@@ -155,7 +156,9 @@ body {
 }
 
 .footer {
+  padding: 10px;
+  color: #fff;
   text-align: right;
-  height: 80px;
+  height: 50px;
   background-color: #303952;
 }

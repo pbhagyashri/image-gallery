@@ -59,7 +59,6 @@ window.addEventListener("load", function() {
 function getPhotosByPage(pageNumber = 1, searchQuery = 'vintage') {
 
   const KEY = 'f1b7bf92f0d79937504418aeaaad3907aa12ce5f5c8b06982e291d68b875d5db'
-  //let URL = `https://api.unsplash.com/photos?page=${pageNumber}&client_id=${KEY}`
   let URL = `https://api.unsplash.com/search/photos?page=${pageNumber}&query=${searchQuery}&client_id=${KEY}`
 
   //make a fetch call to Unsplash api. Provide pageNumber as a variable to fetch URL
@@ -95,10 +94,6 @@ function getPhotosByPage(pageNumber = 1, searchQuery = 'vintage') {
         thumbnailContainer.appendChild(imgTag)
 
         imgTag.addEventListener('click', function() {
-          window.scroll({
-            top: '10px',
-            behavior: 'smooth'
-          })
           createModel(photo, this)
         })
 
@@ -107,7 +102,7 @@ function getPhotosByPage(pageNumber = 1, searchQuery = 'vintage') {
       })
     })
     .catch(error => {
-      debugger
+    
       alert(error)
     })
 }

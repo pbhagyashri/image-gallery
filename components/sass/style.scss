@@ -13,7 +13,7 @@ body {
   justify-content: center;
 
   .header {
-    height: 100px;
+    height: 85px;
     background-color: $dark-grey;
     display: flex;
     align-items: center;
@@ -21,23 +21,23 @@ body {
   }
   .header_title { 
     font-family: $highlight-font;
-    font-size: 2.5em;
+    font-size: 2.2em;
     color: antiquewhite;
   }
 }
 
 .grid-container {
   display: grid;
-  grid-gap: 20px 20px;
+  grid-gap: 5px 20px;
   grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
   background-color: $dark-grey;
   width: 60%;
-  margin: 5% 19%;
-  padding: 20px;
+  margin: 1.5% 19%;
+  padding: 15px;
 
   .grid-container__thumbnails {
-    width: 148px;
-    height: 148px;
+    width: 145px;
+    height: 145px;
   }
 
   .grid-container__small {
@@ -77,11 +77,12 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 15px;
 
   .pagination-container__links {
     display: inline-block;
-    // margin-left: 33.3%;
-    padding: 15px 0px 15px 15px;
+   
+    padding: 10px 0px 10px 10px;
     border-radius: 30px;
     background-color: $red;
     font-size: 1.3em;
@@ -91,7 +92,7 @@ body {
   .pagination-container__button {
     color: $dark-grey;
     text-decoration: none;
-    padding: 15px;
+    padding: 10px;
   }
 
   .pagination-container__button:hover {
@@ -144,8 +145,10 @@ body {
 }
 
 .footer {
+  padding: 10px;
+  color: #fff;
   text-align: right;
-  height: 80px;
+  height: 50px;
   background-color: $dark-grey;
 }
 

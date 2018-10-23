@@ -2,17 +2,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 20px;
-
+  padding-top: 7px;
 }
 
 .seacrh-form__input {
   display: inline;
-  padding: 9.5px 5px;
+  padding: 7px 5px;
   width: 275px;
   border: 2px solid $dark-grey;
   border-radius: 10px; 
-  
 }
 
 .search-form__btn {
@@ -20,8 +18,7 @@
   color: $red;
   border: 2px solid $dark-grey;
   border-radius: 10px; 
-
-  padding: 7px 20px;
+  padding: 4.5px 20px;
   cursor: pointer;
   display: inline;
   font-size: 1.2em;
