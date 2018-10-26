@@ -22,6 +22,10 @@ https://github.com/pbhagyashri/forbes-engineering-take-home-test
 #### To run the local server run,
 ``npm start``
 
+#### To run tests, please keep a server running and in another terminal tab run, I have used cypress for writing tets. Cypress will open a window for you. Please choose myTests.js. This will fire up a browser that runs tests.
+
+``npm test``
+
 
 
 
