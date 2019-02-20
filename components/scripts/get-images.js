@@ -122,5 +122,8 @@ function createModel (photo, thumbnail) {
   }
 }
 
+const testFunct = function() {
+  
+}
 
 
