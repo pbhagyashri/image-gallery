@@ -13,11 +13,12 @@ const createImg = function(src) {
 const createGallery = function(response) {
   //query the grid container div and save it in a variable.
   let thumbnailDiv = document.getElementsByClassName("grid-container")[0]
-
+  
   response.forEach(imageUrl => {
     
     // create a thumbnail container div for each photo returned by api
     let thumbnailContainer = document.createElement('div');
+    
     thumbnailContainer.className = "thumbnail-container";
   
     //create img tag for each photo returned by api
@@ -26,6 +27,7 @@ const createGallery = function(response) {
     thumbnailContainer.appendChild(imgTag);
 
     //append thumbnail container div to main grid-container
+    
     thumbnailDiv.appendChild(thumbnailContainer);
 
     imgTag.addEventListener('click', function() {
@@ -38,7 +40,7 @@ const createGallery = function(response) {
 //this function displays total word count
 const TotalWordCount = function(response) {
   let totalCountContainer = document.getElementById("total-word-count");
-
+  
   totalCountContainer.innerHTML = response.totalWordCount
   
 }
@@ -46,7 +48,7 @@ const TotalWordCount = function(response) {
 //this function displays a list of words with their counts.
 const WordCount = function(responseObject) {
   let wordCountList = document.getElementById("word-count-list");
- 
+  wordCountList.innerHTML = ""
 
   for (let key in responseObject) {
 
@@ -63,19 +65,13 @@ const WordCount = function(responseObject) {
 
 };
 
-//This function opens an image in a model when user clicks the image
-function createModel (photo, thumbnail) {
-  document.getElementById("modal").style.display = 'block'
-  // thumbnail.src = photo.urls.regular
-  // thumbnail.className = 'grid-container__small'
 
-  // Get the <span> element that closes the modal
-  var span = document.getElementsByClassName("close")[0];
-
-  // When the user clicks on <span> (x), close the modal
-  span.onclick = function() { 
-      modal.style.display = "none";
-      thumbnail.className = 'grid-container__thumbnails'
+//This function will remove existing images from gallery 
+function removeChildElements(parentDiv) {
+  
+  //run a loop to remove child nodes
+  while (parentDiv.hasChildNodes()) {
+    parentDiv.removeChild(parentDiv.firstChild);
   }
 }
 
@@ -114,12 +110,9 @@ let inputBtn = document.getElementsByClassName('search-form__btn')[0]
  
 inputBtn.addEventListener("click", (e) => {
   e.preventDefault()  
-   //removeChildElements()
+  let thumbnailDiv = document.getElementsByClassName("grid-container")[0]
+  removeChildElements(thumbnailDiv)
   let searchInput = inputTag.value
- 
-  // if (searchInput == "") {
-  //   searchInput = 'vintage'
-  // }
   LoadUrl(searchInput)
 })
 
