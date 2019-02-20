@@ -50,17 +50,21 @@ const WordCount = function(responseObject) {
   let wordCountList = document.getElementById("word-count-list");
   wordCountList.innerHTML = ""
 
+  let counter = 0;
   for (let key in responseObject) {
 
-    let value = responseObject[key];
-    let listItem = document.createElement('li');
+    if(counter <= 9 ) {
+      let value = responseObject[key];
+      let listItem = document.createElement('li');
 
-    listItem.className = "word-count-list__item";
+      listItem.className = "word-count-list__item";
 
-    listItem.innerHTML = `${key} - ${value}`
+      listItem.innerHTML = `${key} - ${value}`
 
-    wordCountList.appendChild(listItem)
-
+      wordCountList.appendChild(listItem)
+    }
+    
+    counter += 1
   }
 
 };
