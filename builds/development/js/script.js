@@ -27,6 +27,10 @@ const createGallery = function(response) {
 
     //append thumbnail container div to main grid-container
     thumbnailDiv.appendChild(thumbnailContainer);
+
+    imgTag.addEventListener('click', function() {
+      createModel(photo, this)
+    })
     
   });
 };
@@ -59,13 +63,30 @@ const WordCount = function(responseObject) {
 
 };
 
+//This function opens an image in a model when user clicks the image
+function createModel (photo, thumbnail) {
+  document.getElementById("modal").style.display = 'block'
+  // thumbnail.src = photo.urls.regular
+  // thumbnail.className = 'grid-container__small'
+
+  // Get the <span> element that closes the modal
+  var span = document.getElementsByClassName("close")[0];
+
+  // When the user clicks on <span> (x), close the modal
+  span.onclick = function() { 
+      modal.style.display = "none";
+      thumbnail.className = 'grid-container__thumbnails'
+  }
+}
+
 //let url = 'https://carouselexample.azurewebsites.net/api/values?Url=blog.atish.me';
-let url = 'https://carouselexample.azurewebsites.net/api/values?Url=https://www.latimes.com/';
+//let url = 'https://carouselexample.azurewebsites.net/api/values?Url=';
 
 //This is the main function that makes fetch calls to provided API
-const LoadUrl = function(urlString) {
+const LoadUrl = function(userInput) {
+  let url = `https://carouselexample.azurewebsites.net/api/values?Url=${userInput}`
 
-  return fetch(urlString, {
+  return fetch(url, {
     method: "GET",
     mode: "cors",
     origin: "*",
@@ -101,4 +122,6 @@ inputBtn.addEventListener("click", (e) => {
   // }
   LoadUrl(searchInput)
 })
+
+
 console.log("Create image modal")
