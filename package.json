@@ -1,20 +1,17 @@
 {
-  "name": "forbes-take-home-test",
+  "name": "XSentium-take-home-test",
   "version": "1.0.0",
-  "description": "forbes-take-home-test",
+  "description": "XSentium-take-home-test",
   "main": "index.js",
   "scripts": {
-    "start": "gulp",
-    "test": "./node_modules/.bin/cypress open"
+    "start": "gulp"
   },
   "repository": {
     "type": "git",
     "url": "?.git"
   },
-  "author": "Bhagyashri Padmawar",
+  "author": "Supriya Kosalge",
   "devDependencies": {
-    "cypress": "^3.1.0",
-    "dotenv": "^6.1.0",
     "gulp": "^3.9.1",
     "gulp-compass": "^2.1.0",
     "gulp-concat": "^2.6.1",
