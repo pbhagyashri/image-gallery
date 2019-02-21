@@ -1,4 +1,5 @@
 //create a function to generate img tag
+const apiUrl = "http://loadurl-api.azurewebsites.net/api/loadurl";
 const createImg = function(src) {
   var img = document.createElement("img");
   img.src = src;
@@ -63,7 +64,7 @@ function removeChildElements(parentDiv) {
 
 //This is the main function that makes fetch calls to provided API
 const loadUrl = function(userInput) {
-  let url = `https://carouselexample.azurewebsites.net/api/values?Url=${userInput}`;
+  let url = `${apiUrl}?Url=${userInput}`;
 
   return fetch(url, {
     method: "GET",
