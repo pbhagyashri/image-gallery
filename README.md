@@ -1,32 +1,28 @@
 # image gallery
 
-An image gallery showcasing beautiful images from Unsplash API. Search field allows you to load your favourite categories including cats of-course! 
+An image gallery showcasing beautiful images from the given typed URL in the search bar. Search field allows user to type the website address and load all the images listed on that page via scraping!
+
+Further two sections, lists out the total number of words and also count of top 10 words in the descending order.
+
+This app uses an WebAPI built using ASP.NET and hosted on Azure for demo purpose.
 
 ## Tools and Technologies used
 
 - HTML5,
 - CSS3,
 - CSS-Grid for responsiveness.
-- Sass CSS Preprocessor, 
+- Sass CSS Preprocessor,
 - Gulp build tool,
 - Vanila JavaScript
 
 ## Instruction for running the project.
 
 #### Please clone the github repo from this URL
-https://github.com/pbhagyashri/forbes-engineering-take-home-test
 
 #### To install all dependancies run,
-``npm install``
+
+`npm install`
 
 #### To run the local server run,
-``npm start``
 
-#### To run tests, please keep a server running and in another terminal tab run, I have used cypress for writing tets. Cypress will open a window for you. Please choose myTests.js. This will fire up a browser that runs tests.
-
-``npm test``
-
-
-
-
-
+`npm start`

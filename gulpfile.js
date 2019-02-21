@@ -39,11 +39,11 @@ gulp.task("css", function() {
 
 gulp.task("watch", function() {
   gulp.watch(jsSources, ["js"]);
-  gulp.watch("components/sass/*.scss", ["compass"]);
+  gulp.watch(cssSources, ["css"]);
   gulp.watch(htmlSources, ["html"]);
 });
 
-gulp.task("default", ["js", "html", "watch", "connect", "log"]);
+gulp.task("default", ["js", "html", "css", "watch", "connect", "log"]);
 
 gulp.task("connect", function() {
   connect.server({
