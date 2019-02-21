@@ -19,7 +19,7 @@ body {
     align-items: center;
     justify-content: center;
   }
-  .header_title { 
+  .header_title {
     font-family: $highlight-font;
     font-size: 2.2em;
     color: antiquewhite;
@@ -51,10 +51,9 @@ body {
 
   .grid-container__thumbnails:hover {
     opacity: 0.5;
-  } 
-  
-  @media only screen and (max-width: 700px){
-    
+  }
+
+  @media only screen and (max-width: 700px) {
     .grid-container__thumbnails {
       width: 100%;
       height: 100%;
@@ -67,7 +66,7 @@ body {
   }
 }
 
-@media only screen and (max-width: 500px){
+@media only screen and (max-width: 500px) {
   .grid-container {
     margin-left: 15%;
   }
@@ -81,14 +80,14 @@ body {
 
   .pagination-container__links {
     display: inline-block;
-   
+
     padding: 10px 0px 10px 10px;
     border-radius: 30px;
     background-color: $red;
     font-size: 1.3em;
     font-weight: 700;
   }
-  
+
   .pagination-container__button {
     color: $dark-grey;
     text-decoration: none;
@@ -99,26 +98,25 @@ body {
     background-color: antiquewhite;
   }
 
-  @media only screen and (max-width : 500px) {
+  @media only screen and (max-width: 500px) {
     .pagination-container__button {
       padding: 12px;
     }
   }
-
 }
 
 #modal {
   display: none;
-  position: fixed;  
-  z-index: 1; 
+  position: fixed;
+  z-index: 1;
   padding-top: 100px;
   left: 0;
   top: 0;
-  width: 100%; 
-  height: 100vh; 
-  overflow: auto; 
-  background-color: rgb(0,0,0); 
-  background-color: rgba(0,0,0,0.9); 
+  width: 100%;
+  height: 100vh;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.9);
 }
 
 .close {
@@ -151,6 +149,3 @@ body {
   height: 50px;
   background-color: $dark-grey;
 }
-
-
-
